@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* PAGE COLORS AND SIZES */
@@ -18,7 +19,7 @@
 
 /* GENERAL STYLE */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -48,7 +49,10 @@ body {
 
 /* NAV */
 .nav {
-  background: var(--white);
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .nav-list {
@@ -61,7 +65,7 @@ body {
 
 .nav-link {
   text-decoration: none;
-  color: var(--text);
+  color: var(--white);
   padding: 0.5rem 1rem;
 }
 
@@ -127,6 +131,17 @@ body {
 }
 
 /* PROJECTS */
+.skill-item summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.skill-item p {
+  margin-top: 0.5rem;
+  color: var(--text-light);
+}
+
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -138,6 +153,8 @@ body {
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-card:hover {
@@ -171,13 +188,26 @@ body {
   padding: 3rem 1rem;
 }
 
-.contact-link {
-  color: var(--accent);
-  text-decoration: none;
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
-.contact-link:hover {
-  text-decoration: underline;
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 
 /* RESPONSIVE */
