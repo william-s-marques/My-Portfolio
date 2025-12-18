@@ -70,7 +70,6 @@ body {
 }
 
 .nav-link:hover {
-  background-color: var(--primary);
   color: var(--white);
   border-radius: 4px;
 }
@@ -99,18 +98,17 @@ body {
   align-items: center;
 }
 
-.about-image {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-}
 
 .about-text {
   color: var(--text-light);
 }
 
 /* SKILLS */
+
+.skill-description li {
+    margin-bottom: 0.5rem;
+}
+
 .skills-list {
   list-style: none;
   display: grid;
@@ -120,7 +118,7 @@ body {
 
 .skill-item {
   background: var(--white);
-  padding: 1rem;
+  padding: 2rem;
   border-left: 4px solid var(--primary);
   border-radius: 6px;
   transition: transform 0.3s;
@@ -153,6 +151,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s;
+  display: block;
   text-decoration: none;
   color: inherit;
 }
@@ -168,7 +167,7 @@ body {
 }
 
 .project-content {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .project-title {
@@ -209,6 +208,21 @@ body {
   height: 24px;
   fill: currentColor;
 }
+/* Page load animation */
+.page-load {
+    animation: pageReveal 0.9s ease-out forwards;
+}
+
+@keyframes pageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -216,6 +230,11 @@ body {
     flex-direction: column;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .page-load {
+        animation: none;
+    }
+}
   .about-content {
     flex-direction: column;
     text-align: center;
