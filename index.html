@@ -1,233 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Marques - Fullstack dev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>William Marques | Fullstack Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="page">
 
-    <!-- NAVIGATION: Menu for page sections -->
-    <nav class="nav">
-        <div class="container">
-            <ul class="nav-list">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+  <!-- HERO / HEADER -->
+  <header class="hero">
+    <nav class="nav container">
+      <ul class="nav-list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
     </nav>
 
-    <!-- HEADER: Top section with name and profession -->
-    <header class="header">
-        <div class="container">
-            <h1 class="header-title">WILLIAM MARQUES</h1>
-            <p class="header-subtitle">Fullstack Developer</p>
-        </div>
-    </header>
+    <div class="hero-content container">
+      <h1 class="hero-title">William Marques</h1>
+      <p class="hero-subtitle">Fullstack Developer</p>
+      <span class="hero-badge">🎮 RPG & Anime Enthusiast</span>
+    </div>
+  </header>
 
-    <!-- MAIN: Primary content of the page -->
-    <main class="main">
+  <!-- MAIN CONTENT -->
+  <main>
 
-        <!-- ABOUT ME SECTION -->
-        <section id="about" class="section about-section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <p class="about-text">
-                    I hold a degree in Systems Analysis and Development and an AWS Cloud Practitioner certification.
+    <!-- ABOUT -->
+    <section id="about" class="section container fade-in" data-section>
+      <h2 class="section-title">About Me</h2>
+      <p class="text">
+        Fullstack developer with a background in Systems Analysis and Development
+        and AWS Cloud Practitioner certification. Passionate about building scalable,
+        performant and user-friendly applications with clean architecture and strong UX.
+      </p>
+    </section>
 
-                    <br><br>
+    <!-- SKILLS -->
+    <section id="skills" class="section container fade-in" data-section>
+      <h2 class="section-title">Skills</h2>
 
-                    My professional goal is to work as a Fullstack Developer, integrating front-end and back-end
-                    skills to build complete, scalable applications with a strong focus on performance, usability,
-                    and security.
+      <div class="skills-grid">
+        <article class="skill-card">HTML5 & CSS3</article>
+        <article class="skill-card">JavaScript</article>
+        <article class="skill-card">Git & GitHub</article>
+        <article class="skill-card">UX / UI</article>
+        <article class="skill-card">Networking</article>
+      </div>
+    </section>
 
-                    <br><br>
+    <!-- PROJECTS -->
+    <section id="projects" class="section container fade-in" data-section>
+      <h2 class="section-title">Projects</h2>
 
-                    My previous experience as a salesperson, operations leader, and monitor played an important role
-                    in developing essential soft skills such as organization, teamwork, communication, and empathy.
-                    Today, I apply these skills directly to technology projects and collaborative development
-                    environments.
+      <div class="projects-grid">
+        <a
+          href="https://github.com/william-s-marques"
+          target="_blank"
+          class="project-card"
+        >
+          <h3>CSS Gradients</h3>
+          <p>Advanced gradients and motion design</p>
+        </a>
 
-                    <br><br>
+        <a
+          href="https://github.com/william-s-marques"
+          target="_blank"
+          class="project-card"
+        >
+          <h3>Web Page Clone</h3>
+          <p>Layout replication using Flexbox</p>
+        </a>
 
-                    Currently, I am enhancing both my technical and behavioral skills through the Alpha EdTech
-                    program, where I engage in daily hands-on challenges that simulate real-world scenarios from the
-                    technology industry.
+        <a
+          href="https://github.com/william-s-marques"
+          target="_blank"
+          class="project-card"
+        >
+          <h3>CSS Animations</h3>
+          <p>Pure CSS animations and transitions</p>
+        </a>
+      </div>
+    </section>
 
-                    <br><br>
+  </main>
 
-                    <strong>Technical skills under development:</strong>
-                    <br>
-                    – Fundamentals of Networks and Internet;<br>
-                    – Version control using Git and GitHub;<br>
-                    – Development of responsive interfaces with HTML and CSS;<br>
-                    – Application of UX/UI best practices;<br>
-                    – Accurate implementation of layouts from tools such as Figma;<br>
-                    – Component-based and efficient styling with CSS;<br>
-                    – Performance optimization and cross-browser compatibility.
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <p>© 2026 — William Marques</p>
 
-                </p>
-            </div>
-        </section>
+    <div class="footer-links">
+      <a href="https://github.com/william-s-marques" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
 
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="section projects-section" aria-labelledby="projects-title">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-
-                    <!-- Project Card 1 -->
-                    <a href="https://github.com/william-s-marques/Demonstration-of-color-gradient-in-CSS.git" target="_blank" class="project-card">
-
-                        <img src="Assets/Gradient.png" alt="Linear gradient image" class="project-image">
-
-                        <div class="project-content">
-                            <h3 class="project-title">Linear Gradients in CSS</h3>
-                            <ul class="project-description">
-                                <li>Visual Hierarchy</li>
-                                <li>Motion Design</li>
-                                <li>Sophisticated use of Filters and Gradients</li>
-                            </ul>
-                        </div>
-
-                    </a>
-
-                    <!-- Project Card 2 -->
-                    <a href="https://github.com/william-s-marques/Web-Page.git" target="_blank" class="project-card">
-
-                        <img src="Assets/Travel.png" alt="Travel web page" class="project-image">
-
-                        <div class="project-content">
-                            <h3 class="project-title">Replicating a Web Page</h3>
-                            <ul class="project-description">
-                                <li>Replicating a Pinterest web page template</li>
-                                <li>Flexbox</li>
-                            </ul>
-                        </div>
-
-                    </a>
-
-                    <!-- Project Card 3 -->
-                    <a href="https://github.com/william-s-marques/Smooth-and-dynamic-animation-with-CSS.git" target="_blank" class="project-card">
-
-                        <img src="Assets/Animation.png" alt="Animated image gradient" class="project-image">
-
-                        <div class="project-content">
-                            <h3 class="project-title">Animation with HTML and CSS</h3>
-                            <ul class="project-description">
-                                <li>Animation using only CSS.</li>
-                                <li>Animated gradient</li>
-                                <li>Advanced transitions and hovering</li>
-                            </ul>
-                        </div>
-
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS SECTION -->
-        <section id="skills" class="section skills-section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <ul class="skills-list">
-
-                    <li>
-                        <details class="skill-item">
-                            <summary>Networking Best Practices</summary>
-                            <ul class="skill-description">
-                                <li>DNS (Domain Name System)</li>
-                                <li>Internet Architecture</li>
-                                <li>Computer Networks</li>
-                                <li>Network Security</li>
-                                <li>Web Security</li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="skill-item">
-                            <summary>Version Control With Git</summary>
-                            <ul class="skill-description">
-                                <li>Git, VSCode & GitLens</li>
-                                <li>Branches & Merge</li>
-                                <li>Remote Repository</li>
-                                <li>Pull Request</li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="skill-item">
-                            <summary>HTML5</summary>
-                            <ul class="skill-description">
-                                <li>HyperText Markup Language</li>
-                                <li>Exploring the Use of Audio and Video</li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="skill-item">
-                            <summary>CSS3</summary>
-                            <ul class="skill-description">
-                                <li>Introduction to CSS (Cascading Style Sheets)</li>
-                                <li>Flexbox</li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <details class="skill-item">
-                            <summary>UX/UI</summary>
-                            <ul class="skill-description">
-                                <li>Cores & GIMP</li>
-                                <li>Figma</li>
-                            </ul>
-                        </details>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <body class="page-load">
-    </main>
-
-    <!-- FOOTER: Bottom section with contact information -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <h2 class="footer-title">My Networks</h2>
-            <div class="social-links">
-
-                <a href="https://www.linkedin.com/in/william-marquess/" target="_blank" class="contact-link"
-                    aria-label="LinkedIn">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-linkedin" viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-                    </svg>
-
-                    <span>LinkedIn</span>
-                </a>
-
-                <a href="https://github.com/william-s-marques" target="_blank" class="contact-link" aria-label="GitHub">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-github" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                    </svg>
-
-                    <span>GitHub</span>
-                </a>
-
-            </div>
-
-    </footer>
-
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
-
 </html>
