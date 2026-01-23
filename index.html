@@ -1,113 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>William Marques | Fullstack Developer</title>
+  <title>William | RPG Dev Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Pixel Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg: #0f0f1b;
+      --panel: #1c1c2e;
+      --accent: #ffcc00;
+      --hp: #ff4d4d;
+      --xp: #00ff99;
+      --text: #f5f5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Press Start 2P', monospace;
+      image-rendering: pixelated;
+    }
+
+    section {
+      padding: 32px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 4px solid var(--accent);
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 8px 8px 0 #000;
+    }
+
+    h1, h2, h3 {
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    button {
+      font-family: inherit;
+      background: var(--accent);
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #000;
+    }
+
+    button:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #000;
+    }
+
+    /* START SCREEN */
+    #start {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* CHARACTER */
+    .bar {
+      height: 16px;
+      background: #333;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .fill {
+      height: 100%;
+    }
+
+    .hp { background: var(--hp); width: 80%; }
+    .xp { background: var(--xp); width: 60%; }
+
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .skill {
+      border: 3px solid #888;
+      padding: 16px;
+      background: #141424;
+    }
+
+    /* QUESTS */
+    .quests {
+      display: grid;
+      gap: 16px;
+    }
+
+    .quest {
+      border: 3px dashed var(--accent);
+      padding: 16px;
+      background: #141424;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      opacity: 0.6;
+    }
+  </style>
 </head>
+<body>
 
-<body class="page">
-
-  <!-- HERO / HEADER -->
-  <header class="hero">
-    <nav class="nav container">
-      <ul class="nav-list">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="hero-content container">
-      <h1 class="hero-title">William Marques</h1>
-      <p class="hero-subtitle">Fullstack Developer</p>
-      <span class="hero-badge">🎮 RPG & Anime Enthusiast</span>
+  <!-- START GAME -->
+  <section id="start">
+    <div class="panel">
+      <h1>DEV RPG</h1>
+      <p>William Marques</p>
+      <button onclick="startGame()">START GAME</button>
     </div>
-  </header>
+  </section>
 
-  <!-- MAIN CONTENT -->
-  <main>
+  <!-- GAME CONTENT -->
+  <main id="game" style="display:none;">
 
-    <!-- ABOUT -->
-    <section id="about" class="section container fade-in" data-section>
-      <h2 class="section-title">About Me</h2>
-      <p class="text">
-        Fullstack developer with a background in Systems Analysis and Development
-        and AWS Cloud Practitioner certification. Passionate about building scalable,
-        performant and user-friendly applications with clean architecture and strong UX.
-      </p>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section container fade-in" data-section>
-      <h2 class="section-title">Skills</h2>
-
-      <div class="skills-grid">
-        <article class="skill-card">HTML5 & CSS3</article>
-        <article class="skill-card">JavaScript</article>
-        <article class="skill-card">Git & GitHub</article>
-        <article class="skill-card">UX / UI</article>
-        <article class="skill-card">Networking</article>
+    <!-- CHARACTER -->
+    <section>
+      <div class="panel">
+        <h2>🧙 Personagem</h2>
+        <p>Classe: Backend Developer</p>
+        <p>Nível: 12</p>
+        <p>HP</p>
+        <div class="bar"><div class="fill hp"></div></div>
+        <p>XP</p>
+        <div class="bar"><div class="fill xp"></div></div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section container fade-in" data-section>
-      <h2 class="section-title">Projects</h2>
+    <!-- SKILLS -->
+    <section>
+      <div class="panel">
+        <h2>⚔️ Skill Tree</h2>
+        <div class="skills">
+          <div class="skill">Node.js</div>
+          <div class="skill">TypeScript</div>
+          <div class="skill">JWT Auth</div>
+          <div class="skill">Docker</div>
+          <div class="skill">RocksDB</div>
+          <div class="skill">APIs REST</div>
+        </div>
+      </div>
+    </section>
 
-      <div class="projects-grid">
-        <a
-          href="https://github.com/william-s-marques"
-          target="_blank"
-          class="project-card"
-        >
-          <h3>CSS Gradients</h3>
-          <p>Advanced gradients and motion design</p>
-        </a>
+    <!-- QUESTS -->
+    <section>
+      <div class="panel">
+        <h2>📜 Quests</h2>
+        <div class="quests">
+          <div class="quest">
+            <h3>Sistema de Autenticação</h3>
+            <p>Dificuldade: ★★★★☆</p>
+            <p>Recompensa: +300 XP</p>
+          </div>
+          <div class="quest">
+            <h3>Galeria com Paginação</h3>
+            <p>Dificuldade: ★★★☆☆</p>
+            <p>Recompensa: +200 XP</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <a
-          href="https://github.com/william-s-marques"
-          target="_blank"
-          class="project-card"
-        >
-          <h3>Web Page Clone</h3>
-          <p>Layout replication using Flexbox</p>
-        </a>
-
-        <a
-          href="https://github.com/william-s-marques"
-          target="_blank"
-          class="project-card"
-        >
-          <h3>CSS Animations</h3>
-          <p>Pure CSS animations and transitions</p>
-        </a>
+    <!-- NPC CONTACT -->
+    <section>
+      <div class="panel">
+        <h2>🏰 NPC</h2>
+        <p>Deseja iniciar uma conversa?</p>
+        <button onclick="window.open('https://github.com','_blank')">GitHub</button>
+        <button onclick="window.open('https://linkedin.com','_blank')">LinkedIn</button>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer id="contact" class="footer">
-    <p>© 2026 — William Marques</p>
+  <footer>🎮 Portfolio 100% Complete</footer>
 
-    <div class="footer-links">
-      <a href="https://github.com/william-s-marques" target="_blank">GitHub</a>
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-    </div>
-  </footer>
+  <script>
+    function startGame() {
+      document.getElementById('start').style.display = 'none';
+      document.getElementById('game').style.display = 'block';
+    }
+  </script>
 
-  <!-- JS -->
-  <script src="script.js"></script>
 </body>
 </html>
