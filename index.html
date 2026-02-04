@@ -1,205 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>William | RPG Dev Portfolio</title>
 
-  <!-- Pixel Font -->
+  <!-- Google Fonts: Press Start 2P for the retro gaming feel -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #0f0f1b;
-      --panel: #1c1c2e;
-      --accent: #ffcc00;
-      --hp: #ff4d4d;
-      --xp: #00ff99;
-      --text: #f5f5f5;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Press Start 2P', monospace;
-      image-rendering: pixelated;
-    }
-
-    section {
-      padding: 32px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .panel {
-      background: var(--panel);
-      border: 4px solid var(--accent);
-      padding: 24px;
-      margin-bottom: 32px;
-      box-shadow: 8px 8px 0 #000;
-    }
-
-    h1, h2, h3 {
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    button {
-      font-family: inherit;
-      background: var(--accent);
-      border: none;
-      padding: 12px 20px;
-      cursor: pointer;
-      box-shadow: 4px 4px 0 #000;
-    }
-
-    button:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 #000;
-    }
-
-    /* START SCREEN */
-    #start {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    /* CHARACTER */
-    .bar {
-      height: 16px;
-      background: #333;
-      margin-bottom: 8px;
-      position: relative;
-    }
-
-    .fill {
-      height: 100%;
-    }
-
-    .hp { background: var(--hp); width: 80%; }
-    .xp { background: var(--xp); width: 60%; }
-
-    /* SKILLS */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-    }
-
-    .skill {
-      border: 3px solid #888;
-      padding: 16px;
-      background: #141424;
-    }
-
-    /* QUESTS */
-    .quests {
-      display: grid;
-      gap: 16px;
-    }
-
-    .quest {
-      border: 3px dashed var(--accent);
-      padding: 16px;
-      background: #141424;
-    }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      opacity: 0.6;
-    }
-  </style>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <!-- START GAME -->
-  <section id="start">
-    <div class="panel">
-      <h1>DEV RPG</h1>
-      <p>William Marques</p>
-      <button onclick="startGame()">START GAME</button>
-    </div>
-  </section>
+<body class="crt">
 
-  <!-- GAME CONTENT -->
-  <main id="game" style="display:none;">
-
-    <!-- CHARACTER -->
-    <section>
-      <div class="panel">
-        <h2>🧙 Personagem</h2>
-        <p>Classe: Backend Developer</p>
-        <p>Nível: 12</p>
-        <p>HP</p>
-        <div class="bar"><div class="fill hp"></div></div>
-        <p>XP</p>
-        <div class="bar"><div class="fill xp"></div></div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section>
-      <div class="panel">
-        <h2>⚔️ Skill Tree</h2>
-        <div class="skills">
-          <div class="skill">Node.js</div>
-          <div class="skill">TypeScript</div>
-          <div class="skill">JWT Auth</div>
-          <div class="skill">Docker</div>
-          <div class="skill">RocksDB</div>
-          <div class="skill">APIs REST</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUESTS -->
-    <section>
-      <div class="panel">
-        <h2>📜 Quests</h2>
-        <div class="quests">
-          <div class="quest">
-            <h3>Sistema de Autenticação</h3>
-            <p>Dificuldade: ★★★★☆</p>
-            <p>Recompensa: +300 XP</p>
-          </div>
-          <div class="quest">
-            <h3>Galeria com Paginação</h3>
-            <p>Dificuldade: ★★★☆☆</p>
-            <p>Recompensa: +200 XP</p>
+  <div id="app-container">
+    <!-- HEADER / HUD -->
+    <header>
+      <div class="player-info">
+        <div class="hp-bar-container">
+          <span>PLAYER: WILLIAM</span>
+          <div class="hp-bar">
+            <div class="hp-fill"></div>
           </div>
         </div>
+        <div>LVL: 12 | CLASS: FULLSTACK</div>
       </div>
-    </section>
-
-    <!-- NPC CONTACT -->
-    <section>
-      <div class="panel">
-        <h2>🏰 NPC</h2>
-        <p>Deseja iniciar uma conversa?</p>
-        <button onclick="window.open('https://github.com','_blank')">GitHub</button>
-        <button onclick="window.open('https://linkedin.com','_blank')">LinkedIn</button>
+      <div class="system-status">
+        <span id="mute-btn" style="cursor: pointer;">🔇 OFF</span>
+        | ONLINE 🟢
       </div>
-    </section>
+    </header>
 
-  </main>
+    <!-- AUDIO SYSTEM -->
+    <audio id="bg-music" loop>
+      <source src="Assets/rpg-music.mp3" type="audio/mpeg">
+    </audio>
 
-  <footer>🎮 Portfolio 100% Complete</footer>
+    <!-- MAIN VIEW SCREEN -->
+    <main>
+      <!-- INTRO SCREEN -->
+      <section id="screen-intro" class="screen active">
+        <div class="intro-content">
+          <p class="blink" style="margin-bottom: 10px; font-size: 0.7rem; color: var(--accent-color);">CHOOSE YOUR CLASS
+          </p>
+          <div class="avatar-frame" id="avatar-container">🧙‍♂️</div>
+          <h1 id="avatar-title">MAGE DEV</h1>
+          <p id="intro-text"
+            data-text="Bem-vindo, aventureiro! Explore meu mundo de código, derrote bugs e complete missões épicas.">
+          </p>
+        </div>
+      </section>
 
-  <script>
-    function startGame() {
-      document.getElementById('start').style.display = 'none';
-      document.getElementById('game').style.display = 'block';
-    }
-  </script>
+      <!-- INVENTORY (SKILLS) -->
+      <section id="screen-inventory" class="screen">
+        <h2>🎒 INVENTORY</h2>
+        <div class="inventory-grid">
+          <div class="item-slot" data-desc="Pergaminho antigo contendo os segredos da estrutura da Web.">
+            <span class="item-icon">📜</span>
+            <div class="item-name">HTML5</div>
+          </div>
+          <div class="item-slot" data-desc="O pincel mágico capaz de dar vida e cor a qualquer interface.">
+            <span class="item-icon">🎨</span>
+            <div class="item-name">CSS3</div>
+          </div>
+          <div class="item-slot" data-desc="Cristal de energia que concede interatividade e lógica aos elementos.">
+            <span class="item-icon">⚡</span>
+            <div class="item-name">JAVASCRIPT</div>
+          </div>
+          <div class="item-slot" data-desc="O escudo da tipagem que protege o código contra erros caóticos.">
+            <span class="item-icon">📘</span>
+            <div class="item-name">TYPESCRIPT</div>
+          </div>
+          <div class="item-slot" data-desc="Núcleo de poder que permite executar magia fora do navegador.">
+            <span class="item-icon">🧶</span>
+            <div class="item-name">NODEJS</div>
+          </div>
+        </div>
+        <div id="item-description-box" class="description-box">
+          <p>Selecione um item para ver seus status.</p>
+        </div>
+      </section>
 
+      <!-- QUESTS (PROJECTS) -->
+      <section id="screen-quests" class="screen">
+        <h2>📜 QUEST LOG</h2>
+        <div class="quest-log">
+
+          <div class="quest-item">
+            <div class="quest-header">
+              <h3>To-Do List API</h3>
+              <span class="quest-status">COMPLETED</span>
+            </div>
+            <p>Objetivo: Criação de uma Api Rest de uma To-Do List usando JWT e NodeJs.</p>
+            <p>Requisito: Nível 10 de Backend.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="screen-contact" class="screen">
+        <h2>📡 COMM LINK</h2>
+        <p>Establishing connection...</p>
+        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+          <button class="btn-retro" onclick="window.open('https://github.com/william-s-marques')">GITHUB</button>
+          <button class="btn-retro"
+            onclick="window.open('https://www.linkedin.com/in/william-marquess/')">LINKEDIN</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- MENU CONTROLS -->
+    <nav class="menu-bar">
+      <button class="btn-retro active" data-target="screen-intro">STATUS</button>
+      <button class="btn-retro" data-target="screen-inventory">ITEMS</button>
+      <button class="btn-retro" data-target="screen-quests">QUESTS</button>
+      <button class="btn-retro" data-target="screen-contact">SAVE</button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
